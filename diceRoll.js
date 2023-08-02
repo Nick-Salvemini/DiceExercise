@@ -1,22 +1,59 @@
-let diceValue = 2;
+let diceValue = 1;
 
-let diceImage = document.getElementById('diceImage')
+let diceImage = document.getElementById('diceImg');
 
-if (diceValue = 1) {
-    diceImage.src = '/diceImages/1.png'
+function changeDice() {
+    diceValue = Math.floor(Math.random() * 6) + 1;
+    diceImg.src = `/diceImages/${diceValue}.png`;
 }
-else if (diceValue = 2) {
-    diceImage.src = '/diceImages/2.png'
+
+function disableEnable() {
+    button = $('#roll')
+    button.prop("disabled", true);
+    setTimeout(function () {
+        button.prop("disabled", false);
+    }, 2500)
 }
-else if (diceValue = 3) {
-    diceImage.src = '/diceImages/3.png'
+
+function moveDice() {
+    $('#diceImg').animate({
+        left: '+=100'
+    }, 750);
+    $('#diceImg').animate({
+        left: '-=100'
+    }, 750);
+    $('#diceImg').animate({
+        left: '+=35'
+    }, 400);
+    $('#diceImg').animate({
+        left: '-=35'
+    }, 300);
+    $('#diceImg').animate({
+        left: '+=15'
+    }, 200);
+    $('#diceImg').animate({
+        left: '-=15'
+    }, 100);
+    // There's supposed to be an option to add easing, which should be able to give it a bouncing animating with easeInBounce, but I can't get it to work 
 }
-else if (diceValue = 4) {
-    diceImage.src = '/diceImages/4.png'
+
+function changeDiceFace() {
+    num = Math.floor(Math.random() * 6) + 1;
+    diceImg.src = `/diceImages/${num}.png`;
 }
-else if (diceValue = 5) {
-    diceImage.src = '/diceImages/5.png'
-}
-else if (diceValue = 6) {
-    diceImage.src = '/diceImages/6.png'
-}
+
+
+
+$('#roll').on('click', function () {
+    disableEnable();
+
+    $(document).ready(function () {
+        let interval = setInterval(changeDiceFace, 100)
+        setTimeout(function () {
+            clearInterval(interval)
+        }, 2500)
+    })
+
+    moveDice();
+    setTimeout(changeDice(), 2500)
+})
