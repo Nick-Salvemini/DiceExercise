@@ -21,20 +21,7 @@ function moveDice() {
     }, 750);
     $('#diceImg').animate({
         left: '-=100'
-    }, 750);
-    $('#diceImg').animate({
-        left: '+=35'
-    }, 400);
-    $('#diceImg').animate({
-        left: '-=35'
-    }, 300);
-    $('#diceImg').animate({
-        left: '+=15'
-    }, 200);
-    $('#diceImg').animate({
-        left: '-=15'
-    }, 100);
-    // There's supposed to be an option to add easing, which should be able to give it a bouncing animating with easeInBounce, but I can't get it to work 
+    }, { duration: 1500, specialEasing: { left: 'easeOutBounce' } });
 }
 
 function changeDiceFace() {
