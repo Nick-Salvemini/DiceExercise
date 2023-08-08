@@ -1,0 +1,48 @@
+.diceDiv {
+    max-width: 18rem;
+    max-height: 18rem;
+}
+
+.diceImg {
+    position: relative;
+    left: 0;
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* #board{
+
+} */
+
+table {
+    border-spacing: 1rem .25rem;
+    border-collapse: separate;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tbody {
+    border: 5px solid black;
+}
+
+thead,
+tfoot {
+    border: 5px solid grey;
+}
+
+td {
+    height: 4.5rem;
+    width: 6rem;
+    border: 5px solid black;
+    margin: 5px 10px;
+    background-color: black;
+}
+
+.total {
+    border: 5px solid grey;
+    background-color: grey;
+}
