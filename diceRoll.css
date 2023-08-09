@@ -1,6 +1,6 @@
 .diceDiv {
-    max-width: 18rem;
-    max-height: 18rem;
+    width: 18rem;
+    height: 6rem;
 }
 
 .diceImg {
@@ -17,6 +17,14 @@ h1 {
 /* #board{
 
 } */
+
+.hideImg {
+    display: none;
+}
+
+.hover {
+    border: 5px solid red;
+}
 
 table {
     border-spacing: 1rem .25rem;
@@ -37,8 +45,7 @@ tfoot {
 td {
     height: 4.5rem;
     width: 6rem;
-    border: 5px solid black;
-    margin: 5px 10px;
+    text-align: center;
     background-color: black;
 }
 
