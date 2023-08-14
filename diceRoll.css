@@ -17,6 +17,13 @@ h1 {
 /* #board{
 
 } */
+#p1 {
+    margin-top: 6rem;
+}
+
+#p2 {
+    margin-bottom: 6rem;
+}
 
 .hideImg {
     display: none;

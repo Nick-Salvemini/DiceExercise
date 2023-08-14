@@ -13,67 +13,77 @@
 <body>
     <h1>Dice Roll</h1>
 
-    <button id="roll1" class="roll">Roll Dice</button>
+    <div class="row">
 
-    <div id="diceDiv1" class="diceDiv text-bg-primary p-3">
-        <img id="diceImg1" class="diceImg hideImg" src="/diceImages/1.png" alt="dice">
+        <div id="p1" class="col-4">
+            <button id="roll1" class="roll">Roll Dice</button>
+            <div id="diceDiv1" class="diceDiv text-bg-primary p-3">
+                <img id="diceImg1" class="diceImg hideImg" src="/diceImages/1.png" alt="dice">
+            </div>
+        </div>
+
+        <div id="board" class="col-4">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="diceSlot p1c1" id="p1c1r1"></td>
+                        <td class="diceSlot p1c2" id="p1c2r1"></td>
+                        <td class="diceSlot p1c3" id="p1c3r1"></td>
+                    </tr>
+                    <tr>
+                        <td class="diceSlot p1c1" id="p1c1r2"></td>
+                        <td class="diceSlot p1c2" id="p1c2r2"></td>
+                        <td class="diceSlot p1c3" id="p1c3r2"></td>
+                    </tr>
+                    <tr>
+                        <td class="diceSlot p1c1" id="p1c1r3"></td>
+                        <td class="diceSlot p1c2" id="p1c2r3"></td>
+                        <td class="diceSlot p1c3" id="p1c3r3"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="total" id="p1c1Total"></td>
+                        <td class="total" id="p1c2Total"></td>
+                        <td class="total" id="p1c3Total"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <td class="total" id="p2c1Total"></td>
+                        <td class="total" id="p2c2Total"></td>
+                        <td class="total" id="p2c3Total"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="diceSlot" id="p2c1r3"></td>
+                        <td class="diceSlot" id="p2c2r3"></td>
+                        <td class="diceSlot" id="p2c3r3"></td>
+                    </tr>
+                    <tr>
+                        <td class="diceSlot" id="p2c1r2"></td>
+                        <td class="diceSlot" id="p2c2r2"></td>
+                        <td class="diceSlot" id="p2c3r2"></td>
+                    </tr>
+                    <tr>
+                        <td class="diceSlot" id="p2c1r1"></td>
+                        <td class="diceSlot" id="p2c2r1"></td>
+                        <td class="diceSlot" id="p2c3r1"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="p2" class="col-4 align-self-end">
+            <button id="roll2" class="roll">Roll Dice</button>
+            <div id="diceDiv2" class="diceDiv text-bg-primary p-3">
+                <img id="diceImg2" class="diceImg hideImg" src="/diceImages/1.png" alt="dice">
+            </div>
+        </div>
     </div>
-
-    <div id="board">
-        <table>
-            <tbody>
-                <tr>
-                    <td class="diceSlot p1c1" id="p1c1r1"></td>
-                    <td class="diceSlot p1c2" id="p1c2r1"></td>
-                    <td class="diceSlot p1c3" id="p1c3r1"></td>
-                </tr>
-                <tr>
-                    <td class="diceSlot p1c1" id="p1c1r2"></td>
-                    <td class="diceSlot p1c2" id="p1c2r2"></td>
-                    <td class="diceSlot p1c3" id="p1c3r2"></td>
-                </tr>
-                <tr>
-                    <td class="diceSlot p1c1" id="p1c1r3"></td>
-                    <td class="diceSlot p1c2" id="p1c2r3"></td>
-                    <td class="diceSlot p1c3" id="p1c3r3"></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td class="total" id="p1c1Total"></td>
-                    <td class="total" id="p1c2Total"></td>
-                    <td class="total" id="p1c3Total"></td>
-                </tr>
-            </tfoot>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <td class="total" id="p2c1Total"></td>
-                    <td class="total" id="p2c2Total"></td>
-                    <td class="total" id="p2c3Total"></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="diceSlot" id="p2c1r3"></td>
-                    <td class="diceSlot" id="p2c2r3"></td>
-                    <td class="diceSlot" id="p2c3r3"></td>
-                </tr>
-                <tr>
-                    <td class="diceSlot" id="p2c1r2"></td>
-                    <td class="diceSlot" id="p2c2r2"></td>
-                    <td class="diceSlot" id="p2c3r2"></td>
-                </tr>
-                <tr>
-                    <td class="diceSlot" id="p2c1r1"></td>
-                    <td class="diceSlot" id="p2c2r1"></td>
-                    <td class="diceSlot" id="p2c3r1"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
