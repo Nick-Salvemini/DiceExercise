@@ -1,5 +1,3 @@
-Dice Class
-
 let diceValue = 1;
 
 let diceImg1 = $('#diceImg1')
