@@ -46,8 +46,9 @@ class Dice {
     }
 }
 
-class Board {
+class Board extends Dice {
     constructor(currentPlayer, diceValue) {
+        super(currentPlayer)
         this.currentPlayer = currentPlayer;
         this.diceValue = diceValue
         this.diceImg = $(`#diceImg${currentPlayer}`);
@@ -111,6 +112,7 @@ class Board {
                 this.removeHover();
                 this.diceImg.addClass('hideImg');
                 $('td').off();
+                super.disableEnable()
             })
         })
     }
@@ -148,7 +150,6 @@ class Board {
 //             let board = new Board(currentPlayer, dice.diceValue);
 //             board.hover(dice.diceValue);
 //             board.placeDice();
-//             dice.disableEnable();
 //         }, 1101)
 //     }
 
