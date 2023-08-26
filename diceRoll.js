@@ -1,6 +1,12 @@
-// class Players(){
+class Players(){
+    constructor(playerN){
+        this.playerNum = playerNum
+        this.columns = [[`.p${this.playerNum}c1`, `#p${this.playerNum}c1r1`, `#p${this.playerNum}c1r2`, `#p${this.playerNum}c1r3`],
+        [`.p${this.playerNum}c2`, `#p${this.playerNum}c2r1`, `#p${this.playerNum}c2r2`, `#p${this.playerNum}c2r3`],
+        [`.p${this.playerNum}c3`, `#p${this.playerNum}c3r1`, `#p${this.playerNum}c3r2`, `#p${this.playerNum}c3r3`]]
+    }
 
-// }
+}
 
 
 
@@ -47,14 +53,14 @@ class Dice {
 }
 
 class Board extends Dice {
-    constructor(currentPlayer, diceValue) {
+    constructor(currentPlayer) {
         super(currentPlayer)
         this.currentPlayer = currentPlayer;
-        this.diceValue = diceValue
+        this.dice = new Dice();
+        this.player1 = new Player()
+        this.player2 = new Player()
         this.diceImg = $(`#diceImg${currentPlayer}`);
-        this.columns = [[`.p${currentPlayer}c1`, `#p${currentPlayer}c1r1`, `#p${currentPlayer}c1r2`, `#p${currentPlayer}c1r3`],
-        [`.p${currentPlayer}c2`, `#p${currentPlayer}c2r1`, `#p${currentPlayer}c2r2`, `#p${currentPlayer}c2r3`],
-        [`.p${currentPlayer}c3`, `#p${currentPlayer}c3r1`, `#p${currentPlayer}c3r2`, `#p${currentPlayer}c3r3`]]
+
     }
 
     addHightlight(col, r1, r2, r3, val) {
