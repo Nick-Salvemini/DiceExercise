@@ -1,6 +1,14 @@
 class Player {
-    constructor(name, isHuman) {
+    constructor(name, isHuman = true) {
         this.name = name;
         this.isHuman = isHuman;
+    }
+
+    play(){
+        
+    }
+
+    computerPlay(){
+
     }
 }
