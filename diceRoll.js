@@ -1,12 +1,12 @@
-class Players(){
-    constructor(playerN){
-        this.playerNum = playerNum
-        this.columns = [[`.p${this.playerNum}c1`, `#p${this.playerNum}c1r1`, `#p${this.playerNum}c1r2`, `#p${this.playerNum}c1r3`],
-        [`.p${this.playerNum}c2`, `#p${this.playerNum}c2r1`, `#p${this.playerNum}c2r2`, `#p${this.playerNum}c2r3`],
-        [`.p${this.playerNum}c3`, `#p${this.playerNum}c3r1`, `#p${this.playerNum}c3r2`, `#p${this.playerNum}c3r3`]]
-    }
+// class Player(){
+//     constructor(playerN) {
+//         this.playerNum = playerNum;
+//         this.columns = [[`.p${this.playerNum}c1`, `#p${this.playerNum}c1r1`, `#p${this.playerNum}c1r2`, `#p${this.playerNum}c1r3`],
+//         [`.p${this.playerNum}c2`, `#p${this.playerNum}c2r1`, `#p${this.playerNum}c2r2`, `#p${this.playerNum}c2r3`],
+//         [`.p${this.playerNum}c3`, `#p${this.playerNum}c3r1`, `#p${this.playerNum}c3r2`, `#p${this.playerNum}c3r3`]];
+//     }
 
-}
+// }
 
 
 

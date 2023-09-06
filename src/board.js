@@ -1,17 +1,18 @@
 class Board {
     constructor() {
-        this.playerSection1 = buildPlayerSection(1);
-        this.playerSection2 = buildPlayerSection(2);
+        this.playerSection1 = this.buildPlayerSection(1);
+        this.playerSection2 = this.buildPlayerSection(2);
     }
 
-    buildPlayerSection (playerNum) {
+    buildPlayerSection(playerNum) {
         let columns = []
-        for(let c = 1; c <= 3; c++) {
+        for (let c = 1; c <= 3; c++) {
             columns.push([`.p${playerNum}c${c}`]);
             for (let r = 1; r <= 3; r++) {
-                columns[c-1].push(`#p${playerNum}c${c}r${r}`);
+                columns[c - 1].push(`#p${playerNum}c${c}r${r}`);
             }
         }
+        // console.log(playerNum, columns)
         return columns;
     }
 
@@ -41,13 +42,22 @@ class Board {
         })
     }
 
-    hover(val) { 
-        this.addHightlight(this.columns[0][0], this.columns[0][1], this.columns[0][2], this.columns[0][3], val);
-        this.removeHighlight(this.columns[0][0], this.columns[0][1], this.columns[0][2], this.columns[0][3]);
-        this.addHightlight(this.columns[1][0], this.columns[1][1], this.columns[1][2], this.columns[1][3], val);
-        this.removeHighlight(this.columns[1][0], this.columns[1][1], this.columns[1][2], this.columns[1][3]);
-        this.addHightlight(this.columns[2][0], this.columns[2][1], this.columns[2][2], this.columns[2][3], val);
-        this.removeHighlight(this.columns[2][0], this.columns[2][1], this.columns[2][2], this.columns[2][3]);
+    hover(currentPlayer, diceVal) {
+        let playerSection
+
+        if (currentPlayer === 1) {
+            playerSection = this.playerSection1
+        }
+        else { playerSection = this.playerSection2 }
+
+        console.log(playerSection)
+
+        this.addHightlight(playerSection[0][0], playerSection[0][1], playerSection[0][2], playerSection[0][3], diceVal);
+        this.removeHighlight(playerSection[0][0], playerSection[0][1], playerSection[0][2], playerSection[0][3]);
+        this.addHightlight(playerSection[1][0], playerSection[1][1], playerSection[1][2], playerSection[1][3], diceVal);
+        this.removeHighlight(playerSection[1][0], playerSection[1][1], playerSection[1][2], playerSection[1][3]);
+        this.addHightlight(playerSection[2][0], playerSection[2][1], playerSection[2][2], playerSection[2][3], diceVal);
+        this.removeHighlight(playerSection[2][0], playerSection[2][1], playerSection[2][2], playerSection[2][3]);
     }
 
     removeHover() {
