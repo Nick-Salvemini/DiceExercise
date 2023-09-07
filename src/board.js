@@ -16,6 +16,14 @@ class Board {
         return columns;
     }
 
+    getPlayerSection(currentPlayer) {
+        if (currentPlayer === 1) {
+            return this.playerSection1
+        } else if (currentPlayer === 2) {
+            return this.playerSection2
+        }
+    }
+
     addHightlight(col, r1, r2, r3, val) {
         $(col).on('mouseenter', function () {
             if ($(r1).hasClass('filled') == false) {
@@ -50,8 +58,6 @@ class Board {
         }
         else { playerSection = this.playerSection2 }
 
-        console.log(playerSection)
-
         this.addHightlight(playerSection[0][0], playerSection[0][1], playerSection[0][2], playerSection[0][3], diceVal);
         this.removeHighlight(playerSection[0][0], playerSection[0][1], playerSection[0][2], playerSection[0][3]);
         this.addHightlight(playerSection[1][0], playerSection[1][1], playerSection[1][2], playerSection[1][3], diceVal);
@@ -68,20 +74,20 @@ class Board {
         })
     }
 
-    placeDice() {
-        this.columns.forEach(([col, r1, r2, r3]) => {
-            $(col).on('click', () => {
-                let r = !$(r3).hasClass('filled') ? r3 :
-                    !$(r2).hasClass('filled') ? r2 : r1
+    // placeDice() {
+    //     this.columns.forEach(([col, r1, r2, r3]) => {
+    //         $(col).on('click', () => {
+    //             let r = !$(r3).hasClass('filled') ? r3 :
+    //                 !$(r2).hasClass('filled') ? r2 : r1
 
-                $(r).children('img').remove();
-                $(r).addClass('filled');
-                $(r).append(`<img style="height:4rem; width:4rem" src="/diceImages/${this.diceValue}.png">`);
-                this.removeHover();
-                this.diceImg.addClass('hideImg');
-                $('td').off();
-                super.disableEnable()
-            })
-        })
-    }
+    //             $(r).children('img').remove();
+    //             $(r).addClass('filled');
+    //             $(r).append(`<img style="height:4rem; width:4rem" src="/diceImages/${this.diceValue}.png">`);
+    //             this.removeHover();
+    //             this.diceImg.addClass('hideImg');
+    //             $('td').off();
+    //             // super.disableEnable()
+    //         })
+    //     })
+    // }
 }
