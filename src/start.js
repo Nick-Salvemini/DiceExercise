@@ -1,48 +1,35 @@
 let game = new Game();
 
-// console.log(game.board.playerSection1)
-// console.log(game.board.playerSection2)
-// console.log(game.turnQueue)
+// game.dice2.disableEnable()
 
 function rollPlayer(player, dice, playerSection) {
     if (player.isHuman === false) {
         console.log('player2 is a CPU!', player, game.turnQueue[0])
     } else {
-        // console.log('********', playerSection, dice, player)
+        dice.disableEnable()
         dice.rollDice();
 
         setTimeout(() => {
-            game.board.hover(game.getCurrentPlayerNumber(), dice.getValue());
+            console.log(game.board.getPlayerSection(game.getCurrentPlayerNumber()), dice.getValue());
+            game.board.hover(game.board.getPlayerSection(game.getCurrentPlayerNumber()), dice.getValue());
             playerSection.forEach((arr) => {
                 let col = arr[0]
 
                 $(col).on('click', () => {
+                    // dice.disableEnable()
                     player.play(dice.getValue(), arr)
                     dice.toggleDice();
                     game.board.removeHover();
                     // game.checkWin();
 
-
                     $(document).off('click', `#roll${game.getCurrentPlayerNumber()}`);
+                    // dice.disableEnable()
                     game.switchPlayer();
+                    dice.disableEnable()
 
-                    if (game.getCurrentPlayer().isHuman) {
-                        $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
-
-                            console.log('********', game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
-                            rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
-                        })
-
-                    } else {
-                        // getCurrentPlayer().play()
-                        console.log('CPU Turn');
-                        // game.checkWin();
-
-                        game.switchPlayer();
-                        $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
-                            rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
-                        })
-                    }
+                    $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
+                        rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
+                    })
                 })
             });;
         }, 1102)

@@ -47,12 +47,13 @@ class Dice {
 
     toggleDice() {
         if (this.diceImg.hasClass('hideImg')) {
-            this.diceImg.removeClass('hideImg');
+            this.diceImg.removeClass('hideImg')
         } else { this.diceImg.addClass('hideImg') }
+        ;
     }
 
     rollDice() {
-        this.disableEnable();
+
         this.toggleDice();
         this.moveDice();
         this.changeDiceFace()

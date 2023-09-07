@@ -50,13 +50,13 @@ class Board {
         })
     }
 
-    hover(currentPlayer, diceVal) {
-        let playerSection
+    hover(playerSection, diceVal) {
+        // let playerSection
 
-        if (currentPlayer === 1) {
-            playerSection = this.playerSection1
-        }
-        else { playerSection = this.playerSection2 }
+        // if (currentPlayer === 1) {
+        //     playerSection = this.playerSection1
+        // }
+        // else { playerSection = this.playerSection2 }
 
         this.addHightlight(playerSection[0][0], playerSection[0][1], playerSection[0][2], playerSection[0][3], diceVal);
         this.removeHighlight(playerSection[0][0], playerSection[0][1], playerSection[0][2], playerSection[0][3]);
@@ -73,21 +73,4 @@ class Board {
             }
         })
     }
-
-    // placeDice() {
-    //     this.columns.forEach(([col, r1, r2, r3]) => {
-    //         $(col).on('click', () => {
-    //             let r = !$(r3).hasClass('filled') ? r3 :
-    //                 !$(r2).hasClass('filled') ? r2 : r1
-
-    //             $(r).children('img').remove();
-    //             $(r).addClass('filled');
-    //             $(r).append(`<img style="height:4rem; width:4rem" src="/diceImages/${this.diceValue}.png">`);
-    //             this.removeHover();
-    //             this.diceImg.addClass('hideImg');
-    //             $('td').off();
-    //             // super.disableEnable()
-    //         })
-    //     })
-    // }
 }
