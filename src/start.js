@@ -1,39 +1,49 @@
 let game = new Game();
 
-// game.dice2.disableEnable()
-
 function rollPlayer(player, dice, playerSection) {
-    if (player.isHuman === false) {
-        console.log('player2 is a CPU!', player, game.turnQueue[0])
-    } else {
-        dice.disableEnable()
-        dice.rollDice();
+    // if (player.isHuman === false) {
+    // console.log('player2 is a CPU!', player, game.turnQueue[0])
+    // } else {
+    dice.disableEnable()
+    dice.rollDice();
 
-        setTimeout(() => {
-            console.log(game.board.getPlayerSection(game.getCurrentPlayerNumber()), dice.getValue());
-            game.board.hover(game.board.getPlayerSection(game.getCurrentPlayerNumber()), dice.getValue());
-            playerSection.forEach((arr) => {
-                let col = arr[0]
+    setTimeout(() => {
+        console.log(game.board.getPlayerSection(game.getCurrentPlayerNumber()), dice.getValue());
+        game.board.hover(game.board.getPlayerSection(game.getCurrentPlayerNumber()), dice.getValue());
+        playerSection.forEach((arr) => {
+            let col = arr[0]
 
-                $(col).on('click', () => {
-                    // dice.disableEnable()
-                    player.play(dice.getValue(), arr)
-                    dice.toggleDice();
-                    game.board.removeHover();
-                    // game.checkWin();
+            $(col).on('click', () => {
+                player.play(dice.getValue(), arr)
+                dice.toggleDice();
+                game.board.removeHover();
+                // game.checkWin();
 
-                    $(document).off('click', `#roll${game.getCurrentPlayerNumber()}`);
-                    // dice.disableEnable()
-                    game.switchPlayer();
-                    dice.disableEnable()
+                $(document).off('click', `#roll${game.getCurrentPlayerNumber()}`);
+                game.switchPlayer();
 
+                if (game.getCurrentPlayer().isHuman) {
+                    // game.getCurrentDice().disableEnable();
                     $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
                         rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
                     })
-                })
-            });;
-        }, 1102)
-    }
+                } else {
+                    //game.getCurrentPlayer.play() - handle logic for CPU player
+                    console.log('p2 is CPU');
+                    game.switchPlayer();
+                    game.getCurrentDice().disableEnable();
+                    $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
+                        rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
+                    })
+
+
+                }
+
+
+            })
+        });;
+    }, 1102)
+    // }
 };
 
 $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
