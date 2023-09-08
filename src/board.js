@@ -12,7 +12,6 @@ class Board {
                 columns[c - 1].push(`#p${playerNum}c${c}r${r}`);
             }
         }
-        // console.log(playerNum, columns)
         return columns;
     }
 
@@ -51,13 +50,6 @@ class Board {
     }
 
     hover(playerSection, diceVal) {
-        // let playerSection
-
-        // if (currentPlayer === 1) {
-        //     playerSection = this.playerSection1
-        // }
-        // else { playerSection = this.playerSection2 }
-
         this.addHightlight(playerSection[0][0], playerSection[0][1], playerSection[0][2], playerSection[0][3], diceVal);
         this.removeHighlight(playerSection[0][0], playerSection[0][1], playerSection[0][2], playerSection[0][3]);
         this.addHightlight(playerSection[1][0], playerSection[1][1], playerSection[1][2], playerSection[1][3], diceVal);
