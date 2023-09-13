@@ -8,8 +8,8 @@ function rollPlayer(player, dice, playerSection) {
     dice.rollDice();
 
     setTimeout(() => {
-        console.log(game.board.getPlayerSection(game.getCurrentPlayerNumber()), dice.getValue());
-        game.board.hover(game.board.getPlayerSection(game.getCurrentPlayerNumber()), dice.getValue());
+        console.log(playerSection, dice.getValue());
+        game.board.hover(playerSection, dice.getValue());
         playerSection.forEach((arr) => {
             let col = arr[0]
 
@@ -24,6 +24,7 @@ function rollPlayer(player, dice, playerSection) {
 
                 if (game.getCurrentPlayer().isHuman) {
                     // game.getCurrentDice().disableEnable();
+                    game.dices[1].disableEnable()
                     $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
                         rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
                     })

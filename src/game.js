@@ -1,29 +1,22 @@
 class Game {
     constructor() {
         this.board = new Board()
-        this.player1 = new Player(1);
-        this.player2 = new Player(2);
-        this.dice1 = new Dice(1);
-        this.dice2 = new Dice(2);
-        this.turnQueue = [this.player1, this.player2];
+        this.turnQueue = [new Player(1), new Player(2)];
+        this.dices = [new Dice(1), new Dice(2)];
     }
 
     // checkWin(){}
     // getWinner(){}
     getCurrentPlayerNumber() {
-        let currentPlayer = this.turnQueue[0].playerNum
-        return currentPlayer
+        return this.turnQueue[0].playerNum
     }
 
     getCurrentPlayer() {
-        let currentPlayer = this.turnQueue[0]
-        return currentPlayer
+        return this.turnQueue[0]
     }
 
     getCurrentDice() {
-        if (this.getCurrentPlayerNumber() === 1) {
-            return this.dice1
-        } else { return this.dice2 }
+       return this.dices[0];
     }
 
     getCurrentSection() {
@@ -34,6 +27,7 @@ class Game {
 
     switchPlayer() {
         this.turnQueue = [this.turnQueue[1], this.turnQueue[0]]
+        this.dices = [this.dices[1], this.dices[0]]
     }
 
 }
