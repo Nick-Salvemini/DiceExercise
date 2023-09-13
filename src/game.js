@@ -16,7 +16,7 @@ class Game {
     }
 
     getCurrentDice() {
-       return this.dices[0];
+        return this.dices[0];
     }
 
     getCurrentSection() {

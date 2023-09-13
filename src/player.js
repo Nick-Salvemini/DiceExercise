@@ -27,6 +27,4 @@ class Player {
             this.humanPlay(diceVal, playerSection)
         } else { this.computerPlay(diceVal, playerSection) }
     }
-
-
 }
