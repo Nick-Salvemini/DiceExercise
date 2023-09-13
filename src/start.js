@@ -5,7 +5,6 @@ function rollPlayer(player, dice, playerSection) {
     dice.rollDice();
 
     setTimeout(() => {
-        console.log(playerSection, dice.getValue());
         game.board.hover(playerSection, dice.getValue());
         playerSection.forEach((arr) => {
             let col = arr[0]
@@ -25,13 +24,20 @@ function rollPlayer(player, dice, playerSection) {
                         rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
                     })
                 } else {
-                    //game.getCurrentPlayer.play() - handle logic for CPU player
-                    console.log('p2 is CPU');
-                    game.switchPlayer();
-                    game.getCurrentDice().disableEnable();
-                    $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
-                        rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
-                    })
+                    console.log('*******')
+                    console.log('xxx', game, 'ooooo', game.getCurrentSection())
+                    // game.getCurrentDice().toggleDice()
+                    game.getCurrentDice().rollDice();
+
+                    setTimeout(() => {
+                        game.getCurrentPlayer().play(game.getCurrentDice().getValue(), game.getCurrentSection());
+                        game.getCurrentDice().rollDice();
+                        game.switchPlayer();
+                        game.getCurrentDice().disableEnable();
+                        $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
+                            rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
+                        })
+                    }, 1300)
                 }
             })
         });;

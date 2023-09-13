@@ -13,6 +13,7 @@ class Board {
             }
         }
         return columns;
+        //Expected Return Layout: [[col1, row1.1, row1.2, row1.3],[col2, row2.1, row2.2, row2.3],[col3, row3.1, row3.2, row3.3]]
     }
 
     getPlayerSection(currentPlayer) {

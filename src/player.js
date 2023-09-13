@@ -19,7 +19,22 @@ class Player {
     }
 
     computerPlay(diceVal, playerSection) {
+        // Temporary logic where player places dice randomly
+        let randArr = [];
 
+        playerSection.forEach((arr) => {
+            if (!$(arr[3]).hasClass('filled')) {
+                randArr.push($(arr[3]))
+            } else if (!$(arr[2]).hasClass('filled')) {
+                randArr.push($(arr[2]))
+            } else if (!$(arr[1]).hasClass('filled')) {
+                randArr.push($(arr[1]))
+            }
+        })
+
+        let num = Math.floor(Math.random() * randArr.length);
+        $(randArr[num]).append(`<img style="opacity:0.5; height:4rem; width:4rem" src="/diceImages/${diceVal}.png">`);
+        $(randArr[num]).addClass('filled');
     }
 
     play(diceVal, playerSection) {

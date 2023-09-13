@@ -42,7 +42,6 @@ class Dice {
         setTimeout(function () {
             clearInterval(interval);
         }, 1100)
-
     }
 
     toggleDice() {
@@ -50,6 +49,7 @@ class Dice {
             this.diceImg.removeClass('hideImg')
         } else { this.diceImg.addClass('hideImg') }
         ;
+        console.log('toggle')
     }
 
     rollDice() {
