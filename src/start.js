@@ -15,6 +15,7 @@ function rollPlayer(player, dice, playerSection) {
                 // *****************************************************
                 // let row = player.play(dice.getValue(), arr);
                 // console.log(row)
+                // row KEEPS RETURNING UNDEFINED
                 // game.board.updateScore(dice.getValue(), row, col[4])
                 // *****************************************************
 
