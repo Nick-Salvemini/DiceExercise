@@ -2,7 +2,17 @@ class Board {
     constructor() {
         this.playerSection1 = this.buildPlayerSection(1);
         this.playerSection2 = this.buildPlayerSection(2);
+
+        // ********************************
+        // this.score = [[[null, null, null], [null, null, null], [null, null, null], [null, null, null]], [[null, null, null], [null, null, null], [null, null, null], [null, null, null]]]
+        // ********************************
     }
+
+    // ********************************
+    // updateScore(diceVal, row, col) {
+    //     console.log(diceVal, row, col)
+    // }
+    // ********************************
 
     buildPlayerSection(playerNum) {
         let columns = []

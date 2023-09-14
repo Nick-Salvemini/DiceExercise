@@ -10,7 +10,15 @@ function rollPlayer(player, dice, playerSection) {
             let col = arr[0]
 
             $(col).on('click', () => {
-                player.play(dice.getValue(), arr)
+                player.play(dice.getValue(), arr);
+
+                // *****************************************************
+                // let row = player.play(dice.getValue(), arr);
+                // console.log(row)
+                // game.board.updateScore(dice.getValue(), row, col[4])
+                // *****************************************************
+
+
                 dice.toggleDice();
                 game.board.removeHover();
                 // game.checkWin();
@@ -19,14 +27,11 @@ function rollPlayer(player, dice, playerSection) {
                 game.switchPlayer();
 
                 if (game.getCurrentPlayer().isHuman) {
-                    game.dices[1].disableEnable()
+                    game.dices[1].disableEnable();
                     $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
                         rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
-                    })
+                    });
                 } else {
-                    console.log('*******')
-                    console.log('xxx', game, 'ooooo', game.getCurrentSection())
-                    // game.getCurrentDice().toggleDice()
                     game.getCurrentDice().rollDice();
 
                     setTimeout(() => {
@@ -37,10 +42,10 @@ function rollPlayer(player, dice, playerSection) {
                         $(document).on('click', `#roll${game.getCurrentPlayerNumber()}`, function () {
                             rollPlayer(game.getCurrentPlayer(), game.getCurrentDice(), game.getCurrentSection())
                         })
-                    }, 1300)
+                    }, 1300);
                 }
             })
-        });;
+        });
     }, 1102)
 };
 
