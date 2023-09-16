@@ -3,11 +3,16 @@ class Board {
         this.playerSection1 = this.buildPlayerSection(1);
         this.playerSection2 = this.buildPlayerSection(2);
 
-        this.score = [[[null, null, null], [null, null, null], [null, null, null], [null, null, null]], [[null, null, null], [null, null, null], [null, null, null], [null, null, null]]]
+        this.score = [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]], [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]
     }
+
+    // MAYBE BUILD FUNCTION TO ADD OR CHANGE THE DICE IMAGE IN THE CORRESPONDING SQUARE 
+
+    //SET UP SEPARATE FUNCTION TO CHECK IF THERE ARE MATCHING DICE IN THE COLUMNS AND DELETE THEM, AND THEN SHUFFLE THE DICE TO THE BOTTOM IF THERE ARE EMPTY SPOTS
 
     updateScore(diceVal, row, col) {
         console.log(diceVal, row, col)
+        //Setup to check the row and col to determine which score needs to be updated with the dice value
     }
 
     buildPlayerSection(playerNum) {
