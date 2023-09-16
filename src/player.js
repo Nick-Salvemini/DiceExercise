@@ -17,11 +17,9 @@ class Player {
         $(r).append(`<img style="height:4rem; width:4rem" src="/diceImages/${diceVal}.png">`);
         $('td').off();
 
-        // *****************************************************
         let row = playerSection.indexOf(r)
-        // console.log(row, r)
+        console.log(row, r)
         return row
-        // *****************************************************
     }
 
     computerPlay(diceVal, playerSection) {
@@ -41,11 +39,13 @@ class Player {
         let num = Math.floor(Math.random() * randArr.length);
         $(randArr[num]).append(`<img style="height:4rem; width:4rem" src="/diceImages/${diceVal}.png">`);
         $(randArr[num]).addClass('filled');
+
+        return num + 1
     }
 
     play(diceVal, playerSection) {
         if (this.isHuman === true) {
-            this.humanPlay(diceVal, playerSection)
-        } else { this.computerPlay(diceVal, playerSection) }
+            return this.humanPlay(diceVal, playerSection)
+        } else { return this.computerPlay(diceVal, playerSection) }
     }
 }

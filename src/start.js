@@ -10,15 +10,9 @@ function rollPlayer(player, dice, playerSection) {
             let col = arr[0]
 
             $(col).on('click', () => {
-                player.play(dice.getValue(), arr);
+                let row = player.play(dice.getValue(), arr);
 
-                // *****************************************************
-                // let row = player.play(dice.getValue(), arr);
-                // console.log(row)
-                // row KEEPS RETURNING UNDEFINED
-                // game.board.updateScore(dice.getValue(), row, col[4])
-                // *****************************************************
-
+                game.board.updateScore(dice.getValue(), row, col[4])
 
                 dice.toggleDice();
                 game.board.removeHover();
