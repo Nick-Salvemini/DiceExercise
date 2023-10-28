@@ -6,14 +6,60 @@ class Board {
         this.score = [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]], [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]]
     }
 
-    // MAYBE BUILD FUNCTION TO ADD OR CHANGE THE DICE IMAGE IN THE CORRESPONDING SQUARE 
+    updateColTotals(player, diceVal, col, row) {
+        player = player - 1;
+        col = col - 1;
+        row = row - 1;
 
-    //SET UP SEPARATE FUNCTION TO CHECK IF THERE ARE MATCHING DICE IN THE COLUMNS AND DELETE THEM, AND THEN SHUFFLE THE DICE TO THE BOTTOM IF THERE ARE EMPTY SPOTS
+        this.score[player][col][row] = diceVal
 
-    updateScore(diceVal, row, col) {
-        console.log(diceVal, row, col)
-        //Setup to check the row and col to determine which score needs to be updated with the dice value
+        let row1 = this.score[player][col][0];
+        let row2 = this.score[player][col][1];
+        let row3 = this.score[player][col][2];
+
+        let total
+
+        if (row1 !== row2 && row1 !== row3 && row2 !== row3) {
+            total = row1 + row2 + row3;
+        } else if (row1 === row2 && row1 === row3) {
+            total = (row1 * 3) + (row2 * 3) + (row3 * 3)
+        } else if (row1 === row2 && row1 !== row3) {
+            total = (row1 * 2) + (row2 * 2) + row3
+        } else if (row1 !== row2 && row2 === row3) {
+            total = row1 + (row2 * 2) + (row3 * 2)
+        } else if (row1 !== row2 && row1 === row3) {
+            total = (row1 * 2) + row2 + (row3 * 2)
+        }
+
+        // console.log('total', total)
+
+        this.score[player][3][col] = total;
+
+        return [this.score[player][3][0], this.score[player][3][1], this.score[player][3][2]]
     }
+
+    updateScore(playerNum) {
+        let col1Total = this.score[playerNum - 1][3][0]
+        let col2Total = this.score[playerNum - 1][3][1]
+        let col3Total = this.score[playerNum - 1][3][2]
+
+        let total = col1Total + col2Total + col3Total
+
+        $(`#p${playerNum}Score`).text(total)
+    }
+
+    // updateDice(){
+    //     let p1Arr = [this.score[0][0], this.score[0][1], this.score[0][2]]
+    //     let p2Arr = [this.score[1][0], this.score[1][1], this.score[1][2]]
+
+    //     for(let i = 0; i > 2; i++){
+    //         for (let j = 0; j < 2; j++){
+    //             if(p1Arr[i][j] !== 0){
+
+    //             }
+    //         }
+    //     }
+    // }
 
     buildPlayerSection(playerNum) {
         let columns = []

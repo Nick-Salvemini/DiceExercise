@@ -49,7 +49,7 @@ class Dice {
             this.diceImg.removeClass('hideImg')
         } else { this.diceImg.addClass('hideImg') }
         ;
-        console.log('toggle')
+        // console.log('toggle')
     }
 
     rollDice() {

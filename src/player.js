@@ -18,7 +18,7 @@ class Player {
         $('td').off();
 
         let row = playerSection.indexOf(r)
-        console.log(row, r)
+        // console.log(row, r)
         return row
     }
 
@@ -40,7 +40,8 @@ class Player {
         $(randArr[num]).append(`<img style="height:4rem; width:4rem" src="/diceImages/${diceVal}.png">`);
         $(randArr[num]).addClass('filled');
 
-        return num + 1
+        // return num + 1
+        return [parseInt($(randArr[num]).attr('id')[3]), parseInt($(randArr[num]).attr('id')[5])]
     }
 
     play(diceVal, playerSection) {

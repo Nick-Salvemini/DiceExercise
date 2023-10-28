@@ -7,8 +7,6 @@ class Game {
 
     }
 
-    // checkWin() {}
-    // getWinner(){}
     getCurrentPlayerNumber() {
         return this.turnQueue[0].playerNum
     }
@@ -32,4 +30,25 @@ class Game {
         this.dices = [this.dices[1], this.dices[0]]
     }
 
+    checkFilledBoard(playerNum) {
+        let playerBoard = $(`.p${playerNum}DiceSlot`)
+        console.log(playerBoard)
+
+        let allFilled = true;
+
+        playerBoard.each(function () {
+            if (!$(this).hasClass("filled")) {
+                allFilled = false;
+
+                return allFilled;
+            }
+        });
+        console.log(allFilled);
+        return allFilled;
+    }
+
+    getWinner(playerNum) {
+        $('#modal-text').text("Player " + playerNum + " wins the match");
+        $('#myModal').modal('show');
+    }
 }
