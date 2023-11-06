@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS usersdb;
+CREATE DATABASE IF NOT EXISTS knuckle_sandwiches_db;
 
-\c usersdb;
+\c knuckle_sandwiches_db;
 
 DROP TABLE IF EXISTS users;
 
