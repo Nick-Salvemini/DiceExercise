@@ -1,72 +1,42 @@
-.diceDiv {
-    width: 18rem;
-    height: 6rem;
-    margin: 5px auto auto auto;
-}
-
-.diceImg {
-    position: relative;
-    left: 0;
-    max-width: 4rem;
-    max-height: 4rem;
-}
-
-.icon {
-    max-width: 4rem;
-    max-height: 4rem;
-}
-
 h1,
-h2,
-p {
+h2 {
     text-align: center;
 }
 
-#p1,
-#p2 {
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.user-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info,
+.user-record,
+.player-icon,
+.play-button {
+    width: 30%;
     text-align: center;
 }
 
-#p1 {
-    margin-top: 6rem;
+.user-info {
+    margin-bottom: 40px;
 }
 
-#p2 {
-    margin-bottom: 6rem;
+.user-info button {
+    margin-top: 10px;
 }
 
-.hideImg {
-    display: none;
+img {
+    max-width: 50px;
 }
 
-.hover {
-    border: 5px solid red;
-}
-
-table {
-    border-spacing: 1rem .25rem;
-    border-collapse: separate;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-tbody {
-    border: 5px solid black;
-}
-
-thead,
-tfoot {
-    border: 5px solid grey;
-}
-
-td {
-    height: 4.5rem;
-    width: 6rem;
-    text-align: center;
-    background-color: black;
-}
-
-.total {
-    border: 5px solid grey;
-    background-color: grey;
+.play-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/userPage.css">
+    <title>User Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <%= userInfo.username %>
+        </h1>
+        <div class="user-section">
+            <div class="user-info">
+                <h2>User Info</h2>
+                <p>Username: <span id="username">
+                        <%= userInfo.username %>
+                    </span></p>
+                <p>Email: <span id="email">
+                        <%= userInfo.email %>
+                    </span></p>
+                <button class="btn btn-primary" id="editButton">Edit User Info</button>
+            </div>
+            <div class="user-record">
+                <h2>Stats</h2>
+                <p>Wins: <span id="wins"></span>
+                    <%= userInfo.wins %>
+                </p>
+                <p>Losses: <span id="losses">
+                        <%= userInfo.losses %>
+                    </span></p>
+                <p>High Score: <span id="highestScore">
+                        <%= userInfo.highestScore %>
+                    </span></p>
+            </div>
+        </div>
+        <div class="player-icon">
+            <h2>Player Icon</h2>
+            <img src="../playerIcons/sandwich<%= userInfo.playerIconNumber %>.png" alt="Player Icon">
+            <br>
+            <button class="btn btn-primary" id="changeIconButton">Change Icon</button>
+        </div class="play-button">
+        <button class="btn btn-primary play-button">Play</button>
+    </div>
+</body>
+
+</html>

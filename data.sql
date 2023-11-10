@@ -11,7 +11,8 @@ CREATE TABLE users (
     email text NOT NULL UNIQUE,
     wins INT DEFAULT 0,
     losses INT DEFAULT 0,
-    highestScore INT DEFAULT 0
+    highestScore INT DEFAULT 0,
+    playerIconNumber INT DEFAULT 1
 );
 
 INSERT INTO

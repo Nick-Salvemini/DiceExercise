@@ -5,7 +5,7 @@ div {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 600px;
     margin: 100px auto;
 
 }
@@ -17,7 +17,7 @@ input {
 img {
     display: block;
     margin: 0 auto;
-    width: 400px;
+    max-width: 100%;
 }
 
 .login-form,

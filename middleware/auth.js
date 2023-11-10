@@ -5,7 +5,7 @@ function authenticateJWT(req, res, next) {
     try {
         const tokenFromBody = req.body._token;
         const payload = jwt.verify(tokenFromBody, SECRET_KEY);
-        req.user = payload; // create a current user
+        req.user = payload;
         return next();
     } catch (err) {
         return next();
@@ -20,7 +20,20 @@ function ensureLoggedIn(req, res, next) {
     }
 }
 
+function ensureCorrectUser(req, res, next) {
+    try {
+        if (req.user.username === req.params.username) {
+            return next();
+        } else {
+            return next({ status: 401, message: "Unauthorized" });
+        }
+    } catch (err) {
+        return next({ status: 401, message: "Unauthorized" });
+    }
+}
+
 module.exports = {
     authenticateJWT,
-    ensureLoggedIn
+    ensureLoggedIn,
+    ensureCorrectUser
 };
