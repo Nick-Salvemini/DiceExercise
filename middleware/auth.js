@@ -25,10 +25,10 @@ function ensureCorrectUser(req, res, next) {
         if (req.user.username === req.params.username) {
             return next();
         } else {
-            return next({ status: 401, message: "Unauthorized" });
+            return next({ status: 403, message: "Unauthorized" });
         }
     } catch (err) {
-        return next({ status: 401, message: "Unauthorized" });
+        return next({ status: 403, message: "Unauthorized" });
     }
 }
 

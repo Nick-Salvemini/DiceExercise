@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS knuckle_sandwiches_db;
+-- CREATE DATABASE IF NOT EXISTS knuckle_sandwiches_db;
 
 \c knuckle_sandwiches_db;
 
@@ -15,22 +15,19 @@ CREATE TABLE users (
     playerIconNumber INT DEFAULT 1
 );
 
-INSERT INTO
-  users (username, password, email)
-VALUES
-    (firstUser, password123, fakeEmail@gmail.com)
+INSERT INTO users (username, password, email) VALUES ('firstUser', 'password123', 'fakeEmail@gmail.com');
 
 INSERT INTO
   users (username, password, email)
 VALUES
-    (secondUser, password123, leviosa@gmail.com)
+    ('secondUser', 'password123', 'leviosa@gmail.com');
 
 INSERT INTO
   users (username, password, email)
 VALUES
-    (thirdUser, password123, kumquat@gmail.com)
+    ('thirdUser', 'password123', 'kumquat@gmail.com');
 
 INSERT INTO
   users (username, password, email)
 VALUES
-    (forthUser, password123, rolf@gmail.com)
+    ('forthUser', 'password123', 'rolf@gmail.com');

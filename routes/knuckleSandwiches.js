@@ -5,7 +5,7 @@ const { ensureLoggedIn, authenticateJWT, ensureCorrectUser } = require('../middl
 const router = new Router();
 
 router.get('/', async function (req, res, next) {
-    res.render('home', { username });
+    res.render('home');
 });
 
 router.get('/:username', ensureLoggedIn, ensureCorrectUser, async function (req, res, next) {
