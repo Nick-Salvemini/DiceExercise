@@ -15,7 +15,10 @@ CREATE TABLE users (
     playerIconNumber INT DEFAULT 1
 );
 
-INSERT INTO users (username, password, email) VALUES ('firstUser', 'password123', 'fakeEmail@gmail.com');
+INSERT INTO 
+  users (username, password, email) 
+VALUES 
+  ('firstUser', 'password123', 'fakeEmail@gmail.com');
 
 INSERT INTO
   users (username, password, email)

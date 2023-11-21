@@ -3,11 +3,15 @@ const { SECRET_KEY } = require("../config");
 
 function authenticateJWT(req, res, next) {
     try {
-        const tokenFromBody = req.body._token;
+        console.log('line 6', req.cookies)
+        const tokenFromBody = req.cookies.token;
+
         const payload = jwt.verify(tokenFromBody, SECRET_KEY);
+        console.log('line 9', payload)
         req.user = payload;
         return next();
     } catch (err) {
+        console.log(err)
         return next();
     }
 }
@@ -22,6 +26,8 @@ function ensureLoggedIn(req, res, next) {
 
 function ensureCorrectUser(req, res, next) {
     try {
+        console.log('line 29', req.user.username, req.params.username)
+        console.log('line 30', req.user)
         if (req.user.username === req.params.username) {
             return next();
         } else {

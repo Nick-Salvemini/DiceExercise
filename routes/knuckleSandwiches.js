@@ -1,8 +1,11 @@
-const Router = require('express').Router;
-const User = require('../models/user');
-const { ensureLoggedIn, authenticateJWT, ensureCorrectUser } = require('../middleware/auth');
 
+const Router = require('express').Router;
 const router = new Router();
+
+const User = require('../models/user');
+const { ensureLoggedIn, ensureCorrectUser } = require('../middleware/auth');
+
+
 
 router.get('/', async function (req, res, next) {
     res.render('home');
