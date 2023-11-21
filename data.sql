@@ -15,26 +15,6 @@ CREATE TABLE users (
     playerIconNumber INT DEFAULT 1
 );
 
--- INSERT INTO 
---   users (username, password, email) 
--- VALUES 
---   ('firstUser', 'password123', 'fakeEmail@gmail.com');
-
--- INSERT INTO
---   users (username, password, email)
--- VALUES
---     ('secondUser', 'password123', 'leviosa@gmail.com');
-
--- INSERT INTO
---   users (username, password, email)
--- VALUES
---     ('thirdUser', 'password123', 'kumquat@gmail.com');
-
--- INSERT INTO
---   users (username, password, email)
--- VALUES
---     ('forthUser', 'password123', 'rolf@gmail.com');
-
 INSERT INTO
   users (username, password, email)
 VALUES
