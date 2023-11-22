@@ -8,7 +8,6 @@ function authenticateJWT(req, res, next) {
         req.user = payload;
         return next();
     } catch (err) {
-        console.log(err)
         return next();
     }
 }

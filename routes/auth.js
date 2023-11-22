@@ -19,9 +19,7 @@ router.post('/register', async function (req, res, next) {
         }
 
         let newUser = await User.register(newUsername, newEmail, newPassword);
-        console.log('auth.js route line 22', newUser)
         let token = jwt.sign({ username: newUsername }, SECRET_KEY);
-        res.cookie('token', token, { httpOnly: true });
         return res.redirect(`/knuckleSandwiches/${newUser.username}`)
     }
     catch (e) {
@@ -40,8 +38,6 @@ router.post('/login', async function (req, res, next) {
         }
 
         let token = await User.authenticate(username, password)
-
-        console.log('line 53', token)
 
         if (token) {
             res.cookie('token', token, { httpOnly: true })

@@ -16,9 +16,12 @@
     <div class="row">
 
         <div id="p1" class="col-4">
-            <h2 id="p1Username">Player 1</h2>
+            <h2 id="p1Username">
+                <%= userInfo.username %>
+            </h2>
             <div id="p1IconDiv">
-                <img class="icon" id="p1Icon" src="/playerIcons/sandwich1.png" alt="Player 1 Icon">
+                <img class="icon" id="p1Icon" src="../playerIcons/<%= userInfo.playericonnumber %>.png"
+                    alt="Player 1 Icon">
             </div>
             <button id="roll1" class="roll">Roll Dice</button>
             <div id="diceDiv1" class="diceDiv text-bg-primary p-3">
@@ -92,10 +95,10 @@
             </div>
             <button id="roll2" class="roll">Roll Dice</button>
             <div id="diceDiv2" class="diceDiv text-bg-primary p-3">
-                <img id="diceImg2" class="diceImg hideImg" src="/diceImages/1.png" alt="dice">
+                <img id="diceImg2" class="diceImg hideImg" src="../diceImages/1.png" alt="dice">
             </div>
             <div id="p2IconDiv">
-                <img class="icon" id="p2Icon" src="/playerIcons/sandwich2.png" alt="Player 2 Icon">
+                <img class="icon" id="p2Icon" src="/playerIcons/0.png" alt="Player 2 Icon">
             </div>
             <h2 id="p2Username">Player 2</h2>
         </div>

@@ -18,7 +18,6 @@ class Player {
         $('td').off();
 
         let row = playerSection.indexOf(r)
-        // console.log(row, r)
         return row
     }
 

@@ -24,8 +24,8 @@ class User {
         let user = results.rows[0];
         console.log('line 39', user)
         if (user) {
-            console.log('line 41', password, user.password)
-            console.log('line 42', bcrypt.hash(password, BCRYPT_WORK_FACTOR), user.password)
+            // console.log('line 41', password, user.password)
+            // console.log('line 42', bcrypt.hash(password, BCRYPT_WORK_FACTOR), user.password)
             if (await bcrypt.compare(password, user.password)) {
 
                 const token = jwt.sign({ username }, SECRET_KEY);

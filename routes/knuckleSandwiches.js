@@ -25,8 +25,14 @@ router.get('/:username', ensureLoggedIn, ensureCorrectUser, async function (req,
 });
 
 router.get('/:username/game', ensureLoggedIn, ensureCorrectUser, async function (req, res, next) {
-    const username = req.params.username;
-    res.render('game', { username });
+    try {
+        const username = req.params.username;
+        const userInfo = await User.getUserInfo(username);
+         return res.render('game', { userInfo });
+    } catch (error) {
+        console.error('Error in game route:', error);
+        next(error);
+    }
 });
 
 module.exports = router;
